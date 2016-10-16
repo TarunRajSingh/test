@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+</head>
+<body>
+
+<p><a href="#">Main</a></p>
+
+<a href="#page1">page1</a>
+<a href="#page2">page2</a>
+<a href="#page3">page3</a>
+<a href="#page4">page4</a>
+
+<div ng-view></div>
+
+<script>
+var myApp = angular.module("myApp", ["ngRoute"]);
+myApp.config(function($routeProvider) {
+    $routeProvider
+    .when("/.", {
+        templateUrl : "index.html"
+    })
+    .when("/page1", {
+        templateUrl : "page1.html"
+    })
+    .when("/page2", {
+        templateUrl : "page2.html"
+    })
+    .when("/page3", {
+        templateUrl : "page3.html"
+    })
+    .when("/page4", {
+        templateUrl : "page4.html"
+    });
+});
+</script>
+</body>
+</html>
